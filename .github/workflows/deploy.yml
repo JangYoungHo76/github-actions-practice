@@ -13,3 +13,8 @@ jobs:
     steps:
       - name: Hello World 찍기
         run: echo "Hello World"
+
+      - name: 두 번째 step
+        run: |
+          echo "두 번째 step"
+          echo "여러 줄을 출력할 수 있습니다."
