@@ -1,11 +1,14 @@
 name: Github Actions 실행
 
+#event : 언제 실행할 것인가...
 on:
   push:
     branches:
       - main
 
+# 하나의 work flow 안에 여러개의 job을 정의할 수 있습니다.
 jobs:
+  # 내가 원하는대로 정의할 수 있다.
   My-Deploy-job:
     runs-on: ubuntu-latest
 
@@ -18,3 +21,12 @@ jobs:
         run: |
           echo "두 번째 step"
           echo "여러 줄을 출력할 수 있습니다."
+      
+      - name: Github Actions에 저장되어 있는 변수 사용해 보기
+        run: |
+          echo "GITHUB_REPOSITORY : ${{ github.repository }}"
+          echo "GITHUB_REF : ${{ github.ref }}"
+          echo "GITHUB_SHA : ${{ github.sha }}"        
+
+
+          
